@@ -1,8 +1,0 @@
-{
-    "beebvsc": {
-        "sourceFile": [
-            "test.asm"
-        ],
-        "targetName": "test.ssd"
-    }
-}
