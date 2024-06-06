@@ -74,12 +74,5 @@ MODE 7 //BACK TO TEXT MODE
 10 MODE 5
 35 C=RND(3)
 40 GCOL0,C //BACKGORUND COLOUR 0 IS BLACK A
-
-
-
-
-
-
-
-
-
+--------------------------------
+NEW
