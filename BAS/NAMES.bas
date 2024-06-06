@@ -1,0 +1,2 @@
+   10 CLS
+   20 PRINT "ENTER YOUR NAME ";
