@@ -7,7 +7,7 @@
    70 REM BREAK
    80 OB$=BL$+BL$+D$+B$+B$+BL$+BL$
    90 IB$=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$
-  100 SB$=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$
+  100 SB$=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$
   110 ZB$=BL$+BL$+D$+B$+B$+F$+BL$+BL$
   120 LB$=BL$+D$+B$+BL$+D$+B$+BL$+BL$
   130 JB$=F$+BL$+D$+B$+BL$+D$+B$+B$+BL$+BL$
