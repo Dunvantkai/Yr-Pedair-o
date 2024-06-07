@@ -1,0 +1,7 @@
+
+   10 PRINT "Press 'Q' to quit"
+   20 REPEAT
+   30   K=INKEY(0)
+   40   IF K <> -1 THEN PRINT "KEY PRESSED: " ; CHR$(K)
+   50   IF K=81 THEN PRINT "QUITTING..." : END
+   60 UNTIL FALSE
