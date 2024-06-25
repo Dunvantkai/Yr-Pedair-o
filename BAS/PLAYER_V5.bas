@@ -7,6 +7,7 @@
    64 X=1
    65 Y=1
    70 Z=0
+   71 I=0
    75 GR$=CHR$(129)
    76 PRI$="PRESS W,A,S,D TO MOVE AND Q TO RESTART"
    80 OB$=BL$+BL$+D$+B$+B$+BL$+BL$
@@ -16,9 +17,23 @@
   120 LB$=BL$+D$+B$+BL$+D$+B$+BL$+BL$
   130 JB$=F$+BL$+D$+B$+BL$+D$+B$+B$+BL$+BL$
   140 TB$=BL$+BL$+BL$+D$+B$+B$+BL$
-  141 DIM OBA$(1)
-  142 OBA$(0) = BL$+BL$+D$+B$+B$+BL$+BL$
-  143 OBA$(1) = BL$+BL$+BL$+BL$
+      DIM OBA$(0)
+      OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$
+  141 DIM IBA$(1)
+  142 IBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$
+  143 IBA$(1)=BL$+BL$+BL$+BL$
+      DIM SBA$(1)
+      SBA$(0)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$
+      SBA$(1)=BL$+D$+B$+BL$+BL$+D$+B$+BL$
+      DIM ZBA$(1)
+      ZBA$(0)=BL$+BL$+D$+B$+B$+F$+BL$+BL$
+      ZBA$(1)=F$+BL$+D$+B$+B$+B$+BL$+BL$+D$+B$+B$+B$+BL$
+      DIM LBA$(3)
+      LBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+BL$
+      LBA$(1)=BL$+BL$+BL$+D$+B$+B$+B$+BL$
+      LBA$(2)=BL$+BL$+D$+B$+BL$+D$+B$+BL$
+      LBA$(3)=F$+F$+BL$+D$+B$+B$+B$+B$+BL$
+
   150 PRINTTAB(0,0)OB$ ; :PRINT " BLOCK O"
   160 PRINTTAB(20,0)TB$ ; :PRINT " BLOCK T"
   170 PRINTTAB(0,5)SB$ ; :PRINT " BLOCK S"
@@ -42,7 +57,7 @@
   340 IF K=83 THEN GOTO 430 :REM S
   350 IF K=68 THEN GOTO 440 :REM D
   360 IF K=65 THEN GOTO 450 :REM A
-  365 IF K=81 THEN CLS :X=1 :Y=1 :GOTO 150:REM PRESS Q
+  365 IF K=81 THEN GOTO 453 :REM CLS :X=1 :Y=1 :GOTO 150:REM PRESS Q
   370 IF X>38 THEN X=38
   380 IF X<0 THEN X=0
   390 IF Y>25 THEN Y=25
@@ -52,8 +67,10 @@
   430 Y=Y+1 : GOTO 455 :REM S
   440 X=X+1 : GOTO 455 :REM D
   450 X=X-1 : GOTO 455 :REM A
-  455 FOR I% = 0 TO 1
-  460   CLS
-  470   PRINT TAB(X,Y)GR$OBA$(I)
-  480   GOTO 310
+  453 I=I+1 : IF I>1 THEN I=0 : GOTO 455
+  455 REM FOR I = 0 TO 1
+  460 CLS
+  470 PRINT TAB(X,Y)GR$IBA$(I)
+  471 PRINT I
+  480 GOTO 310
 
