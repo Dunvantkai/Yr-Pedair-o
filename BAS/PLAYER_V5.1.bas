@@ -13,9 +13,9 @@
    73 PRI$="PRESS W,A,S,D TO MOVE AND Q TO RESTART"
    74 DIM OBA$(3) :REM O BLOCK
    80 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$
-   90 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 01
-  100 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 02
-  110 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 03
+   90 OBA$(1)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 01
+  100 OBA$(2)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 02
+  110 OBA$(3)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 03
   120 DIM IBA$(3) :REM I BLOCK
   130 IBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$
   140 IBA$(1)=BL$+BL$+BL$+BL$
