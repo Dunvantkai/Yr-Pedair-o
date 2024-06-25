@@ -1,10 +1,10 @@
-   10 BL$=CHR$(255) :REM BLOCK
+   10 BL$=CHR$(255) :REM SMAIl BLOCK
    20 B$=CHR$(8)    :REM CURSOR BACK
    30 F$=CHR$(9)    :REM CURSOR FORWARD
    40 D$=CHR$(10)   :REM CURSOR DOWN
    50 U$=CHR$(11)   :REM CURSOR UP
    60 MODE 7
-   70 DIM OBA$(0) :REM O BLOCK
+   70 DIM OBA$(3) :REM O BLOCK
    80 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$
    90 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 01
   100 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 02
