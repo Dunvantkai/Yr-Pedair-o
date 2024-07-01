@@ -8,5 +8,5 @@ I chose the name Pedair-o (Welsh for (The four of))as a nod to the name "tetris"
 ## How i made the programed and the problems i faced
 the program was writen in bbc basic which is a dumbed down vertion of Basic it's self
 ## How to run  Pedair-o for your self 
-<a href=# Yr-Pedair-o">View Demo</a>
+<a href=#Yr-Pedair-o">Top</a>
 [bbc.xania.org](https://bbc.xania.org/)
