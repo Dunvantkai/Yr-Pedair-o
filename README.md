@@ -11,9 +11,10 @@ the program was writen in bbc basic which is a dumbed down vertion of Basic it's
 pick from 
 <a href="#yr-pedair-o">Top</a>
 ## Run Pedair-o on local computer
-Step 1: To run Pedair-o on your computer you will first need to download an emulator for the Acorn BBC Model B such as [BeebEm](https://github.com/stardot/beebem-windows/releases/download/4.19/BeebEm419.exe) <br>
-Step 2: Once intalled you will need to grab Pedair-o's .sdd or its accompanying side project files from [Latest Releases](https://github.com/Dunvantkai/Yr-Pedair-o/releases) <br>
-Step 3: Now open the BeebEm emulator and click "File" : "Load Disk 0..." Then navogate to where you have installed Pedair-o's .sdd File <br>
-Step 4: To check if you have successfully Mounted the Disk you can type "*CAT" in uppercase to show the list of  <br>
+Step 1: To run Pedair-o on your computer you will first need to download an emulator for the Acorn BBC Model B such as [BeebEm](https://github.com/stardot/beebem-windows/releases/download/4.19/BeebEm419.exe). <br><br>
+Step 2: Once intalled you will need to grab Pedair-o's .sdd or its accompanying side project files from [Latest Releases](https://github.com/Dunvantkai/Yr-Pedair-o/releases). <br><br>
+Step 3: Now open the BeebEm emulator and click "File" : "Load Disk 0..." Then navogate to where you have installed Pedair-o's .sdd File. <br><br>
+Step 4: To check if you have successfully Mounted the Disk you can type <b>*CAT</b> in uppercase to show the list of Programs on said disk. <br><br>
+Step 5: To load the the program into ram type <b>"LOAD "PEDAIR"</b> and then <b>RUN</b> making sure all is typed in uppercase
 ## Run Pedair-o in a browser
 [bbc.xania.org](https://bbc.xania.org/)
