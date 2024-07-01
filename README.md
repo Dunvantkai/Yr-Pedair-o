@@ -15,6 +15,6 @@ Step 1: To run Pedair-o on your computer you will first need to download an emul
 Step 2: Once intalled you will need to grab Pedair-o's .sdd or its accompanying side project files from [Latest Releases](https://github.com/Dunvantkai/Yr-Pedair-o/releases). <br><br>
 Step 3: Now open the BeebEm emulator and click "File" : "Load Disk 0..." Then navogate to where you have installed Pedair-o's .sdd File. <br><br>
 Step 4: To check if you have successfully Mounted the Disk you can type <b>*CAT</b> in uppercase to show the list of Programs on said disk. <br><br>
-Step 5: To load the the program into ram type <b>"LOAD PEDAIR"</b> and then  to execute type <b>RUN</b> making sure all is typed in uppercase
+Step 5: To load a program into ram type <b>LOAD "PEDAIR"</b> and then  to execute type <b>RUN</b> making sure all is typed in uppercase
 ## Run Pedair-o in a browser
 [bbc.xania.org](https://bbc.xania.org/)
