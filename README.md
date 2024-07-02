@@ -13,7 +13,7 @@ pick from
 ## Run Pedair-o on a local computer
 Step 1: To run Pedair-o on your computer you will first need to download an emulator for the Acorn BBC Model B such as [BeebEm](https://github.com/stardot/beebem-windows/releases/download/4.19/BeebEm419.exe). <br><br>
 Step 2: Once intalled you will need to grab Pedair-o's .sdd or its accompanying side project files from [Latest Releases](https://github.com/Dunvantkai/Yr-Pedair-o/releases). <br><br>
-Step 3: Now open the BeebEm emulator and click "File" : "Load Disk 0..." Then navogate to where you have installed Pedair-o's .sdd File. <br><br>
+Step 3: Now open the BeebEm emulator click "File" : "Load Disk 0...", Then navogate to where you have installed Pedair-o's .sdd File. <br><br>
 Step 4: To check if you have successfully Mounted the Disk you can type <b>*CAT</b> in uppercase to show the list of Programs on said disk. <br><br>
 Step 5: To load a program into ram type <b>LOAD "PEDAIR"</b> and then  to execute type <b>RUN</b>. Making sure all is typed in uppercase
 ## Run Pedair-o in a browser
