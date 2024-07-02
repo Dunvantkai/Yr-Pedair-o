@@ -19,3 +19,4 @@ Step 5: To load a program into ram type <b>LOAD "PEDAIR"</b> and then  to execut
 ## Run Pedair-o in a browser
 Step 1: To run Pedair-o in a browser you will need an online emulator for the Acorn BBC Model B such as [bbc.xania.org](https://bbc.xania.org/) <br><br>
 Step 2: Even though you are running this program in a browser, you will still need to download Pedair-o's .sdd file from [Latest Releases](https://github.com/Dunvantkai/Yr-Pedair-o/releases) to upload it to the website <br><br>
+one of thease four chatiros {~ @ | "}
