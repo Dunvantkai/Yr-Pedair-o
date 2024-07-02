@@ -8,8 +8,8 @@ I chose the name Pedair-o (Welsh for (The four of))as a nod to the name "tetris"
 ## How i made the Pedair-o and the problems i faced
 the program was writen in bbc basic which is a dumbed down vertion of Basic it's self
 ## How to run Pedair-o for your self 
-You can run this software either on a model IDE or an emulater via a browser or BeebEm
-Instruction on how to setup each metthord: <a href="#run-pedair-o-on-a-local-computer">Install locally</a>
+You can run this software either on a model IDE or an emulater via a browser or BeebEm <br><br>
+Instruction on how to setup each metthord: <br> Click Here to <a href="#run-pedair-o-on-a-local-computer">Install locally</a> <br> Click Here to Run in <a href="#run-pedair-o-in-a-browser">Browser</a> <br> <a href="#run-pedair-o-in-a-browser">Browser</a> <br><br>
 <a href="#yr-pedair-o">Top</a>
 ## Run Pedair-o on a local computer
 Step 1: To run Pedair-o on your computer you will first need to download an emulator for the Acorn BBC Model B such as [BeebEm](https://github.com/stardot/beebem-windows/releases/download/4.19/BeebEm419.exe). <br><br>
