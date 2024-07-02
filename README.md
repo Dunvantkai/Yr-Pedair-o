@@ -19,4 +19,8 @@ Step 5: To load a program into ram type <b>LOAD "PEDAIR"</b> and then  to execut
 ## Run Pedair-o in a browser
 Step 1: To run Pedair-o in a browser you will need an online emulator for the Acorn BBC Model B such as [bbc.xania.org](https://bbc.xania.org/) <br><br>
 Step 2: Even though you are running this program in a browser, you will still need to download Pedair-o's .sdd file from [Latest Releases](https://github.com/Dunvantkai/Yr-Pedair-o/releases) to upload it to the website <br><br>
-one of thease four chatiros {~ @ | "}
+Step 3: open [bbc.xania.org](https://bbc.xania.org/) in a new a tab and open the drop down tab called Discs, Select "From examples of local" and upload your .sdd file <br><br>
+Step 4: To check if you have successfully Mounted the Disc you can type <b>*CAT</b> in uppercase to show the list of Programs on said disk. <B>WARNING</B><br><br>
+> [!NOTE]
+> When trying to type the * you may find that it will output a whole different key all-together, I'm not sure why it does this but My guess would be a regional keyboard thing to bypass this i have found that one of thease four characters {~ @ | "} should allow you to type *
+Step 5:
