@@ -1,15 +1,17 @@
-   10 MODE 7 : NBL$=" "
+   10 MODE 7
    20 BL$=CHR$(255) :REM BLOCK
+   25 NBL$=" "      :REM NO BLOCK
    30 B$=CHR$(8)    :REM CURSOR BACK
    40 F$=CHR$(9)    :REM CURSOR FORWARD
    50 D$=CHR$(10)   :REM CURSOR DOWN
    60 U$=CHR$(11)   :REM CURSOR UP
+   65 SBL$=BL$      :REM SELECT BLOCK
    70 DIM SET$(3)
-   80 X=1
-   90 Y=1
-  100 P=1
-  110 Z=0
-  120 R=0
+   80 X=1 : Y=1 : P=1 : Z=0 : R=0
+   90 REM Y=1
+  100 REM P=1
+  110 REM Z=0
+  120 REM R=0
   130 GR$=CHR$(129)
   131 REM COLOUR
   132 L$=CHR$(141) : R$=CHR$(129) : G$=CHR$(130)
@@ -19,40 +21,40 @@
   150 PRI$(0)="PRESS W,A,S,D TO MOVE AND Q TO ROTATE  "
   160 PRI$(1)="PRESS E TO QUIT"
   170 DIM OBA$(3) :REM O BLOCK
-  180 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$
-  190 OBA$(1)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 01
-  200 OBA$(2)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 02
-  210 OBA$(3)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 03
+  180 OBA$(0)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$
+  190 OBA$(1)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$             :REM LOOP 01
+  200 OBA$(2)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$             :REM LOOP 02
+  210 OBA$(3)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$             :REM LOOP 03
   220 DIM IBA$(3) :REM I BLOCK
-  230 IBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$
-  240 IBA$(1)=BL$+BL$+BL$+BL$
-  250 IBA$(2)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$    :REM LOOP 01
-  260 IBA$(3)=BL$+BL$+BL$+BL$                      :REM LOOP 02
+  230 IBA$(0)=SBL$+D$+B$+SBL$+D$+B$+SBL$+D$+B$+SBL$
+  240 IBA$(1)=SBL$+SBL$+SBL$+SBL$
+  250 IBA$(2)=SBL$+D$+B$+SBL$+D$+B$+SBL$+D$+B$+SBL$    :REM LOOP 01
+  260 IBA$(3)=SBL$+SBL$+SBL$+SBL$                      :REM LOOP 02
   270 DIM SBA$(3) :REM S BLOCK
-  280 SBA$(0)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$
-  290 SBA$(1)=BL$+D$+B$+BL$+BL$+D$+B$+BL$
-  300 SBA$(2)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$    :REM LOOP 01
-  310 SBA$(3)=BL$+D$+B$+BL$+BL$+D$+B$+BL$          :REM LOOP 02
+  280 SBA$(0)=F$+SBL$+SBL$+D$+B$+B$+B$+SBL$+SBL$+F$
+  290 SBA$(1)=SBL$+D$+B$+SBL$+SBL$+D$+B$+SBL$
+  300 SBA$(2)=F$+SBL$+SBL$+D$+B$+B$+B$+SBL$+SBL$+F$    :REM LOOP 01
+  310 SBA$(3)=SBL$+D$+B$+SBL$+SBL$+D$+B$+SBL$          :REM LOOP 02
   310 DIM ZBA$(3) :REM Z BLOCK
-  320 ZBA$(0)=BL$+BL$+D$+B$+B$+F$+BL$+BL$
-  330 ZBA$(1)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+B$+BL$
-  340 ZBA$(2)=BL$+BL$+D$+B$+B$+F$+BL$+BL$          :REM LOOP 01
-  350 ZBA$(3)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+B$+BL$ :REM LOOP 02
+  320 ZBA$(0)=SBL$+SBL$+D$+B$+B$+F$+SBL$+SBL$
+  330 ZBA$(1)=F$+SBL$+D$+B$+B$+SBL$+SBL$+D$+B$+B$+SBL$
+  340 ZBA$(2)=SBL$+SBL$+D$+B$+B$+F$+SBL$+SBL$          :REM LOOP 01
+  350 ZBA$(3)=F$+SBL$+D$+B$+B$+SBL$+SBL$+D$+B$+B$+SBL$ :REM LOOP 02
   360 DIM LBA$(3) :REM L BLOCK
-  370 LBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+BL$
-  380 LBA$(1)=BL$+BL$+BL$+D$+B$+B$+B$+BL$
-  390 LBA$(2)=BL$+BL$+D$+B$+BL$+D$+B$+BL$
-  400 LBA$(3)=F$+F$+BL$+D$+B$+B$+B$+BL$+BL$+BL$
+  370 LBA$(0)=SBL$+D$+B$+SBL$+D$+B$+SBL$+SBL$
+  380 LBA$(1)=SBL$+SBL$+SBL$+D$+B$+B$+B$+SBL$
+  390 LBA$(2)=SBL$+SBL$+D$+B$+SBL$+D$+B$+SBL$
+  400 LBA$(3)=F$+F$+SBL$+D$+B$+B$+B$+SBL$+SBL$+SBL$
   410 DIM JBA$(3) :REM J BLOCK
-  420 JBA$(0)=F$+BL$+D$+B$+BL$+D$+B$+B$+BL$+BL$
-  430 JBA$(1)=BL$+D$+B$+BL$+BL$+BL$
-  440 JBA$(2)=BL$+BL$+D$+B$+B$+BL$+D$+B$+BL$
-  450 JBA$(3)=BL$+BL$+BL$+D$+B$+BL$
+  420 JBA$(0)=F$+SBL$+D$+B$+SBL$+D$+B$+B$+SBL$+SBL$
+  430 JBA$(1)=SBL$+D$+B$+SBL$+SBL$+SBL$
+  440 JBA$(2)=SBL$+SBL$+D$+B$+B$+SBL$+D$+B$+SBL$
+  450 JBA$(3)=SBL$+SBL$+SBL$+D$+B$+SBL$
   460 DIM TBA$(3) :REM T BLOCK
-  470 TBA$(0)=BL$+BL$+BL$+D$+B$+B$+BL$
-  480 TBA$(1)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+BL$
-  490 TBA$(2)=F$+BL$+D$+B$+B$+BL$+BL$+BL$
-  500 TBA$(3)=BL$+D$+B$+BL$+BL$+D$+B$+B$+BL$
+  470 TBA$(0)=SBL$+SBL$+SBL$+D$+B$+B$+SBL$
+  480 TBA$(1)=F$+SBL$+D$+B$+B$+SBL$+SBL$+D$+B$+SBL$
+  490 TBA$(2)=F$+SBL$+D$+B$+B$+SBL$+SBL$+SBL$
+  500 TBA$(3)=SBL$+D$+B$+SBL$+SBL$+D$+B$+B$+SBL$
       DIM OBAH$(3,3,3) :REM O BLOCK HIT BOX
       OBAH$(0,0,0)=BL$ :OBAH$(0,1,0)=BL$ :OBAH$(0,0,1)=BL$ :OBAH$(0,1,1)=BL$
       OBAH$(1,0,0)=BL$ :OBAH$(1,1,0)=BL$ :OBAH$(1,0,1)=BL$ :OBAH$(1,1,1)=BL$  :REM LOOP 01
@@ -68,17 +70,26 @@
       SBAH$(1,0,0)=BL$ :SBAH$(1,0,1)=BL$ :SBAH$(1,1,1)=BL$ :SBAH$(1,1,2)=BL$
       SBAH$(2,1,0)=BL$ :SBAH$(2,2,0)=BL$ :SBAH$(2,0,1)=BL$ :SBAH$(2,1,1)=BL$  :REM LOOP 01
       SBAH$(3,0,0)=BL$ :SBAH$(3,0,1)=BL$ :SBAH$(3,1,1)=BL$ :SBAH$(3,1,2)=BL$  :REM LOOP 02
-      DIM ZBAH$(3,3,3)
+      DIM ZBAH$(3,3,3) :REM Z BLOCK HIT BOX
       ZBAH$(0,0,0)=BL$ :ZBAH$(0,1,0)=BL$ :ZBAH$(0,1,1)=BL$ :ZBAH$(0,2,1)=BL$
       ZBAH$(1,1,0)=BL$ :ZBAH$(1,0,1)=BL$ :ZBAH$(1,1,1)=BL$ :ZBAH$(1,0,2)=BL$
       ZBAH$(2,0,0)=BL$ :ZBAH$(2,1,0)=BL$ :ZBAH$(2,1,1)=BL$ :ZBAH$(2,2,1)=BL$  :REM LOOP 01
       ZBAH$(3,1,0)=BL$ :ZBAH$(3,0,1)=BL$ :ZBAH$(3,1,1)=BL$ :ZBAH$(3,0,2)=BL$  :REM LOOP 02
-      DIM LBAH$(3,3,3)
+      DIM LBAH$(3,3,3) :REM L BLOCK HIT BOX
       LBAH$(0,0,0)=BL$ :LBAH$(0,0,1)=BL$ :LBAH$(0,0,2)=BL$ :LBAH$(0,1,2)=BL$
       LBAH$(1,0,0)=BL$ :LBAH$(1,1,0)=BL$ :LBAH$(1,2,0)=BL$ :LBAH$(1,0,1)=BL$
       LBAH$(2,0,0)=BL$ :LBAH$(2,1,0)=BL$ :LBAH$(2,1,1)=BL$ :LBAH$(2,1,2)=BL$
       LBAH$(3,2,0)=BL$ :LBAH$(3,0,1)=BL$ :LBAH$(3,1,1)=BL$ :LBAH$(3,2,1)=BL$
-
+      DIM JBAH$(3,3,3) :REM J BLOCK HIT BOX
+      JBAH$(0,1,0)=BL$ :JBAH$(0,1,1)=BL$ :JBAH$(0,0,2)=BL$ :JBAH$(0,1,2)=BL$
+      JBAH$(1,0,0)=BL$ :JBAH$(1,0,1)=BL$ :JBAH$(1,1,1)=BL$ :JBAH$(1,2,1)=BL$
+      JBAH$(2,0,0)=BL$ :JBAH$(2,1,0)=BL$ :JBAH$(2,0,1)=BL$ :JBAH$(2,0,2)=BL$
+      JBAH$(3,0,0)=BL$ :JBAH$(3,1,0)=BL$ :JBAH$(3,2,0)=BL$ :JBAH$(3,2,1)=BL$
+      DIM TBAH$(3,3,3) :REM T BLOCK HIT BOX
+      TBAH$(0,0,0)=BL$ :TBAH$(0,1,0)=BL$ :TBAH$(0,2,0)=BL$ :TBAH$(0,1,0)=BL$
+      TBAH$(1,1,0)=BL$ :TBAH$(1,0,1)=BL$ :TBAH$(1,1,1)=BL$ :TBAH$(1,1,2)=BL$
+      TBAH$(2,1,0)=BL$ :TBAH$(2,0,1)=BL$ :TBAH$(2,1,1)=BL$ :TBAH$(2,2,1)=BL$
+      TBAH$(3,0,0)=BL$ :TBAH$(3,0,1)=BL$ :TBAH$(3,1,1)=BL$ :TBAH$(3,0,2)=BL$
   510 PROC_Main
   520 DEF PROC_Main
   525 PROC_Title
