@@ -64,7 +64,18 @@
       IBAH$(2,0,0)=BL$ :IBAH$(2,0,1)=BL$ :IBAH$(2,0,2)=BL$ :IBAH$(2,0,3)=BL$  :REM LOOP 01
       IBAH$(3,0,0)=BL$ :IBAH$(3,1,0)=BL$ :IBAH$(3,2,0)=BL$ :IBAH$(3,3,0)=BL$  :REM LOOP 02
       DIM SBAH$(3,3,3) :REM S BLOCK HIT BOX
-
+      SBAH$(0,1,0)=BL$ :SBAH$(0,2,0)=BL$ :SBAH$(0,0,1)=BL$ :SBAH$(0,1,1)=BL$
+      SBAH$(1,0,0)=BL$ :SBAH$(1,0,1)=BL$ :SBAH$(1,1,1)=BL$ :SBAH$(1,1,2)=BL$
+      SBAH$(2,1,0)=BL$ :SBAH$(2,2,0)=BL$ :SBAH$(2,0,1)=BL$ :SBAH$(2,1,1)=BL$  :REM LOOP 01
+      SBAH$(3,0,0)=BL$ :SBAH$(3,0,1)=BL$ :SBAH$(3,1,1)=BL$ :SBAH$(3,1,2)=BL$  :REM LOOP 02
+      DIM ZBAH$(3,3,3)
+      ZBAH$(0,0,0)=BL$ :ZBAH$(0,1,0)=BL$ :ZBAH$(0,1,1)=BL$ :ZBAH$(0,2,1)=BL$
+      ZBAH$(1,1,0)=BL$ :ZBAH$(1,0,1)=BL$ :ZBAH$(1,1,1)=BL$ :ZBAH$(1,0,2)=BL$
+      ZBAH$(2,0,0)=BL$ :ZBAH$(2,1,0)=BL$ :ZBAH$(2,1,1)=BL$ :ZBAH$(2,2,1)=BL$  :REM LOOP 01
+      ZBAH$(3,1,0)=BL$ :ZBAH$(3,0,1)=BL$ :ZBAH$(3,1,1)=BL$ :ZBAH$(3,0,2)=BL$  :REM LOOP 02
+      DIM LBAH$(3,3,3)
+      LBAH$(0,0,0)=BL$ :LBAH$(0,0,1)=BL$ :LBAH$(0,0,2)=BL$ :LBAH$(0,1,2)=BL$
+      LBAH$(0,0,0)=BL$ :LBAH$(0,1,0)=BL$ :LBAH$(0,2,0)=BL$ :LBAH$(0,0,1)=BL$
   510 PROC_Main
   520 DEF PROC_Main
   525 PROC_Title
