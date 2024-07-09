@@ -75,7 +75,10 @@
       ZBAH$(3,1,0)=BL$ :ZBAH$(3,0,1)=BL$ :ZBAH$(3,1,1)=BL$ :ZBAH$(3,0,2)=BL$  :REM LOOP 02
       DIM LBAH$(3,3,3)
       LBAH$(0,0,0)=BL$ :LBAH$(0,0,1)=BL$ :LBAH$(0,0,2)=BL$ :LBAH$(0,1,2)=BL$
-      LBAH$(0,0,0)=BL$ :LBAH$(0,1,0)=BL$ :LBAH$(0,2,0)=BL$ :LBAH$(0,0,1)=BL$
+      LBAH$(1,0,0)=BL$ :LBAH$(1,1,0)=BL$ :LBAH$(1,2,0)=BL$ :LBAH$(1,0,1)=BL$
+      LBAH$(2,0,0)=BL$ :LBAH$(2,1,0)=BL$ :LBAH$(2,1,1)=BL$ :LBAH$(2,1,2)=BL$
+      LBAH$(3,2,0)=BL$ :LBAH$(3,0,1)=BL$ :LBAH$(3,1,1)=BL$ :LBAH$(3,2,1)=BL$
+
   510 PROC_Main
   520 DEF PROC_Main
   525 PROC_Title
