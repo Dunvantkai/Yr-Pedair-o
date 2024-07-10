@@ -5,7 +5,6 @@
    40 F$=CHR$(9)    :REM CURSOR FORWARD
    50 D$=CHR$(10)   :REM CURSOR DOWN
    60 U$=CHR$(11)   :REM CURSOR UP
-   65 SBL$=BL$      :REM SELECT BLOCK
    70 DIM SET$(3) : DIM NSET$(3)
    80 X=1 : Y=1 : P=1 : Z=0 : R=0
    90 REM Y=1
@@ -21,40 +20,75 @@
   150 PRI$(0)="PRESS W,A,S,D TO MOVE AND Q TO ROTATE  "
   160 PRI$(1)="PRESS E TO QUIT"
   170 DIM OBA$(3) :REM O BLOCK
-  180 OBA$(0)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$
-  190 OBA$(1)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$             :REM LOOP 01
-  200 OBA$(2)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$             :REM LOOP 02
-  210 OBA$(3)=SBL$+SBL$+D$+B$+B$+SBL$+SBL$             :REM LOOP 03
+  180 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$
+  190 OBA$(1)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 01
+  200 OBA$(2)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 02
+  210 OBA$(3)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 03
   220 DIM IBA$(3) :REM I BLOCK
-  230 IBA$(0)=SBL$+D$+B$+SBL$+D$+B$+SBL$+D$+B$+SBL$
-  240 IBA$(1)=SBL$+SBL$+SBL$+SBL$
-  250 IBA$(2)=SBL$+D$+B$+SBL$+D$+B$+SBL$+D$+B$+SBL$    :REM LOOP 01
-  260 IBA$(3)=SBL$+SBL$+SBL$+SBL$                      :REM LOOP 02
+  230 IBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$
+  240 IBA$(1)=BL$+BL$+BL$+BL$
+  250 IBA$(2)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$    :REM LOOP 01
+  260 IBA$(3)=BL$+BL$+BL$+BL$                      :REM LOOP 02
   270 DIM SBA$(3) :REM S BLOCK
-  280 SBA$(0)=F$+SBL$+SBL$+D$+B$+B$+B$+SBL$+SBL$+F$
-  290 SBA$(1)=SBL$+D$+B$+SBL$+SBL$+D$+B$+SBL$
-  300 SBA$(2)=F$+SBL$+SBL$+D$+B$+B$+B$+SBL$+SBL$+F$    :REM LOOP 01
-  310 SBA$(3)=SBL$+D$+B$+SBL$+SBL$+D$+B$+SBL$          :REM LOOP 02
+  280 SBA$(0)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$
+  290 SBA$(1)=BL$+D$+B$+BL$+BL$+D$+B$+BL$
+  300 SBA$(2)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$    :REM LOOP 01
+  310 SBA$(3)=BL$+D$+B$+BL$+BL$+D$+B$+BL$          :REM LOOP 02
   310 DIM ZBA$(3) :REM Z BLOCK
-  320 ZBA$(0)=SBL$+SBL$+D$+B$+B$+F$+SBL$+SBL$
-  330 ZBA$(1)=F$+SBL$+D$+B$+B$+SBL$+SBL$+D$+B$+B$+SBL$
-  340 ZBA$(2)=SBL$+SBL$+D$+B$+B$+F$+SBL$+SBL$          :REM LOOP 01
-  350 ZBA$(3)=F$+SBL$+D$+B$+B$+SBL$+SBL$+D$+B$+B$+SBL$ :REM LOOP 02
+  320 ZBA$(0)=BL$+BL$+D$+B$+B$+F$+BL$+BL$
+  330 ZBA$(1)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+B$+BL$
+  340 ZBA$(2)=BL$+BL$+D$+B$+B$+F$+BL$+BL$          :REM LOOP 01
+  350 ZBA$(3)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+B$+BL$ :REM LOOP 02
   360 DIM LBA$(3) :REM L BLOCK
-  370 LBA$(0)=SBL$+D$+B$+SBL$+D$+B$+SBL$+SBL$
-  380 LBA$(1)=SBL$+SBL$+SBL$+D$+B$+B$+B$+SBL$
-  390 LBA$(2)=SBL$+SBL$+D$+B$+SBL$+D$+B$+SBL$
-  400 LBA$(3)=F$+F$+SBL$+D$+B$+B$+B$+SBL$+SBL$+SBL$
+  370 LBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+BL$
+  380 LBA$(1)=BL$+BL$+BL$+D$+B$+B$+B$+BL$
+  390 LBA$(2)=BL$+BL$+D$+B$+BL$+D$+B$+BL$
+  400 LBA$(3)=F$+F$+BL$+D$+B$+B$+B$+BL$+BL$+BL$
   410 DIM JBA$(3) :REM J BLOCK
-  420 JBA$(0)=F$+SBL$+D$+B$+SBL$+D$+B$+B$+SBL$+SBL$
-  430 JBA$(1)=SBL$+D$+B$+SBL$+SBL$+SBL$
-  440 JBA$(2)=SBL$+SBL$+D$+B$+B$+SBL$+D$+B$+SBL$
-  450 JBA$(3)=SBL$+SBL$+SBL$+D$+B$+SBL$
+  420 JBA$(0)=F$+BL$+D$+B$+BL$+D$+B$+B$+BL$+BL$
+  430 JBA$(1)=BL$+D$+B$+BL$+BL$+BL$
+  440 JBA$(2)=BL$+BL$+D$+B$+B$+BL$+D$+B$+BL$
+  450 JBA$(3)=BL$+BL$+BL$+D$+B$+BL$
   460 DIM TBA$(3) :REM T BLOCK
-  470 TBA$(0)=SBL$+SBL$+SBL$+D$+B$+B$+SBL$
-  480 TBA$(1)=F$+SBL$+D$+B$+B$+SBL$+SBL$+D$+B$+SBL$
-  490 TBA$(2)=F$+SBL$+D$+B$+B$+SBL$+SBL$+SBL$
-  500 TBA$(3)=SBL$+D$+B$+SBL$+SBL$+D$+B$+B$+SBL$
+  470 TBA$(0)=BL$+BL$+BL$+D$+B$+B$+BL$
+  480 TBA$(1)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+BL$
+  490 TBA$(2)=F$+BL$+D$+B$+B$+BL$+BL$+BL$
+  500 TBA$(3)=BL$+D$+B$+BL$+BL$+D$+B$+B$+BL$
+      DIM EOBA$(3) :REM EMPTY O BLOCK
+      EOBA$(0)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$
+      EOBA$(1)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$             :REM LOOP 01
+      EOBA$(2)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$             :REM LOOP 02
+      EOBA$(3)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$             :REM LOOP 03
+      DIM EIBA$(3) :REM EMPTY I BLOCK
+      EIBA$(0)=NBL$+D$+B$+NBL$+D$+B$+NBL$+D$+B$+NBL$
+      EIBA$(1)=NBL$+NBL$+NBL$+NBL$
+      EIBA$(2)=NBL$+D$+B$+NBL$+D$+B$+NBL$+D$+B$+NBL$    :REM LOOP 01
+      EIBA$(3)=NBL$+NBL$+NBL$+NBL$                      :REM LOOP 02
+      DIM ESBA$(3) :REM EMPTY S BLOCK
+      ESBA$(0)=F$+NBL$+NBL$+D$+B$+B$+B$+NBL$+NBL$+F$
+      ESBA$(1)=NBL$+D$+B$+NBL$+NBL$+D$+B$+NBL$
+      ESBA$(2)=F$+NBL$+NBL$+D$+B$+B$+B$+NBL$+NBL$+F$    :REM LOOP 01
+      ESBA$(3)=NBL$+D$+B$+NBL$+NBL$+D$+B$+NBL$          :REM LOOP 02
+      DIM EZBA$(3) :REM EMPTY Z BLOCK
+      EZBA$(0)=NBL$+NBL$+D$+B$+B$+F$+NBL$+NBL$
+      EZBA$(1)=F$+NBL$+D$+B$+B$+NBL$+NBL$+D$+B$+B$+NBL$
+      EZBA$(2)=NBL$+NBL$+D$+B$+B$+F$+NBL$+NBL$          :REM LOOP 01
+      EZBA$(3)=F$+NBL$+D$+B$+B$+NBL$+NBL$+D$+B$+B$+NBL$ :REM LOOP 02
+      DIM ELBA$(3) :REM EMPTY L BLOCK
+      ELBA$(0)=NBL$+D$+B$+NBL$+D$+B$+NBL$+NBL$
+      ELBA$(1)=NBL$+NBL$+NBL$+D$+B$+B$+B$+NBL$
+      ELBA$(2)=NBL$+NBL$+D$+B$+NBL$+D$+B$+NBL$
+      ELBA$(3)=F$+F$+NBL$+D$+B$+B$+B$+NBL$+NBL$+NBL$
+      DIM EJBA$(3) :REM EMPTY J BLOCK
+      EJBA$(0)=F$+NBL$+D$+B$+NBL$+D$+B$+B$+NBL$+NBL$
+      EJBA$(1)=NBL$+D$+B$+NBL$+NBL$+NBL$
+      EJBA$(2)=NBL$+NBL$+D$+B$+B$+NBL$+D$+B$+NBL$
+      EJBA$(3)=NBL$+NBL$+NBL$+D$+B$+NBL$
+      DIM ETBA$(3) :REM EMPTY T BLOCK
+      ETBA$(0)=NBL$+NBL$+NBL$+D$+B$+B$+NBL$
+      ETBA$(1)=F$+NBL$+D$+B$+B$+NBL$+NBL$+D$+B$+NBL$
+      ETBA$(2)=F$+NBL$+D$+B$+B$+NBL$+NBL$+NBL$
+      ETBA$(3)=NBL$+D$+B$+NBL$+NBL$+D$+B$+B$+NBL$
       DIM OBAH$(3,3,3) :REM O BLOCK HIT BOX
       OBAH$(0,0,0)=BL$ :OBAH$(0,1,0)=BL$ :OBAH$(0,0,1)=BL$ :OBAH$(0,1,1)=BL$
       OBAH$(1,0,0)=BL$ :OBAH$(1,1,0)=BL$ :OBAH$(1,0,1)=BL$ :OBAH$(1,1,1)=BL$  :REM LOOP 01
@@ -107,11 +141,11 @@
   559 PRINTTAB(2,13) "RIGHT SHIFT - To Rotate"
   560 PRINTTAB(2,16) FL$"SPACE" ; :PRINT ST$"- To Start The Game"
   561 PRINTTAB(2,18) "     L - To Exit From Game" : PRINTTAB(9,20)"MAKE BY" ; : PRINT R$"Dunvant_Kai"
-  562 K%=INKEY(0)
+  562 K%=INKEY(0)  :REM 562
   563 IF K%=32 THEN PROC_Random : ENDPROC  :REM START GAME
   564 IF K%=76 THEN CLS : PRINTTAB(4,5)"THANK YOU FOR PLAYER MY GAME ^^" : PRINTTAB(9,10)"MAKE BY"; : PRINT R$"Dunvant_Kai" : PRINTTAB(9,20)LBA$(0) :END : LEAVE GAME
   565 IF K%=83 THEN PROC_ShapeID : ENDPROC  : OPEN SHAPES
-  566 GOTO 562
+  566 GOTO 562 :REM 562
   567 ENDPROC
   568 DEF PROC_Random
   569 RAND%=RND(7)   :REM CHANGE BACK TO 7 AFTER DONE
@@ -133,13 +167,13 @@
   640 PRINTTAB(20,10)JBA$(0) ; :PRINT " BLOCK J"
   650 PRINTTAB(0,15)IBA$(0) ; :PRINT " BLOCK I"
   651 PRINTTAB(5,21)"L - TO GO BACK TO MAIN MENU"
-  652 K%=INKEY(0)
+  652 K%=INKEY(0)  :REM 652
   653 IF K%=76 THEN PROC_Title
-  654 GOTO 652
+  654 GOTO 652 :REM 652
   760 ENDPROC
   770 DEF PROC_PlayerInput
   780 REM WHILE TRUE:REM REPEAT
-  790 K%=INKEY(0)
+  790 K%=INKEY(0)   :REM 790
   800 IF X>38 THEN X=38
   810 IF X<0 THEN X=0
   820 IF Y>15 THEN Y=14
@@ -151,7 +185,7 @@
   880 IF K%=81 OR K%=113 THEN PRINTTAB(X,Y)NSET$(R) : R=R+1 :IF R>3 THEN R=0 :REM ROTATES PEASE AND MAKE SURE IT STAYS IN BOUNDS
   890 IF K%=81 OR K%=113 THEN PROC_Print :REM Q TO ROTAE
   900 IF K%=69 OR K%=101 PROC_RESET
-  910 GOTO 790 :REM UNTIL FALSE FIX LATTER CANT BE LEFT
+  910 GOTO 790 :REM UNTIL FALSE FIX LATTER CANT BE LEFT  :REM 790
   920 ENDPROC
   930 DEF PROC_Print
   940 PRINT SBL$ :REM CLS
