@@ -6,8 +6,7 @@ Pedair-o is my version of tetris for the bbc model b which is a computer that wa
 ## Behind the name
 I chose the name Pedair-o (Welsh for (The four of))as a nod to the name "tetris" as it is derived from the Greek prefix "tetra" meaning to having four parts (as every block in teras is make up of four blocks)
 ## How i made the Pedair-o and the problems i faced
-### How is block data stored? <br>
-### Block Data can be broken down into 3 parts Tile Graphics, Cover Tile Graphics, HitBox <br><br><br>
+### How is block data stored? Block Data can be broken down into 3 parts Tile Graphics, Cover Tile Graphics, HitBox  <br><br>
 ### Hitbox <br>
 Hitbox block data is by far the easiest to understand, as it is just a 3D array. <br><br> Since BASIC requires short variable names, 'IBAH' is short for 'I Block Array Hitbox' <br><br>
 The first number represents what place it holds in the 3D array like a "Frame" of sorts. the latter two say at X 0 and Y 0 place BL$ that is short for CHR$(255) which is just the small boxes that the bricks are made of<br> This way, it is possible to loop over the current "frame" in the array to make sure there are no collisions." <br>
