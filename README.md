@@ -6,13 +6,14 @@ Pedair-o is my version of tetris for the bbc model b which is a computer that wa
 ## Behind the name
 I chose the name Pedair-o (Welsh for (The four of))as a nod to the name "tetris" as it is derived from the Greek prefix "tetra" meaning to having four parts (as every block in teras is make up of four blocks)
 ## How i made the Pedair-o and the problems i faced
-### How is block data stored? Block Data can be broken down into 3 parts Tile Graphics, Cover Tile Graphics, HitBox  <br><br>
+### How is block data stored? Block Data can be broken down into 3 parts Tile Graphics, Cover Tile Graphics and HitBox  <br><br>
 ### Hitbox <br>
 Hitbox block data is by far the easiest to understand, as it is just a 3D array. <br><br> Since BASIC requires short variable names, 'IBAH' is short for 'I Block Array Hitbox' <br><br>
 The first number represents what place it holds in the 3D array like a "Frame" of sorts. the latter two say at X 0 and Y 0 place BL$ that is short for CHR$(255) which is just the small boxes that the bricks are made of<br> This way, it is possible to loop over the current "frame" in the array to make sure there are no collisions." <br>
 but i found it to be too slow to check each frame to print the hole array
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/HiGRAF.PNG) <br><br><br>
 ### Tile Graphics <br>
+IBA' is short for 'I Block Array'<br><br>
 Tile Graphics data is the consequence of the inablilaty to quickly load from the main Screen array, The tile graphics are plastered on top of the screen using the PRINTTAB method and some cheeky cursor movements as It makes each move of the active block more seamless and less laggy and does not wright/save anything till it fails the checkdownmove and gets added to the main Screen array<br>
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/iGRAF.PNG) <br><br><br>
 ### The .Length Problem <br><br> ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/ropos.bmp) <br><br>
