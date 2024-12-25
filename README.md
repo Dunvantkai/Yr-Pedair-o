@@ -6,6 +6,7 @@ Pedair-o is my version of tetris for the bbc model b which is a computer that wa
 ## Behind the name
 I chose the name Pedair-o (Welsh for (The four of))as a nod to the name "tetris" as it is derived from the Greek prefix "tetra" meaning to having four parts (as every block in teras is make up of four blocks)
 ## How i made the Pedair-o and the problems i faced
+### The .Length Problem ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/ropos.bmp) <br><br>
 the program was writen in bbc basic which is a dumbed down vertion of Basic it's self
 ## How to run Pedair-o for your self 
 You can run this software either on a model IDE or an emulater via a browser or BeebEm <br><br>
