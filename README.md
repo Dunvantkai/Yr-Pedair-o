@@ -18,6 +18,7 @@ Tile Graphics data is the consequence of the inablilaty to quickly load from the
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/iGRAF.PNG) <br><br><br>
 ### Cover Tile Graphics <br>
 EIBA is short for 'Empty I Block Array'<br><br>
+Cover tile graphics are used to mask the tile graphics pixels and to save the micro from redrawing the whole screen each time the block moves.
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/EiGRAF.PNG) <br><br><br>
 ### The .Length Problem <br><br> ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/ropos.bmp) <br><br>
 the program was writen in bbc basic which is a dumbed down vertion of Basic it's self
