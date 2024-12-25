@@ -13,9 +13,12 @@ The first number represents what place it holds in the 3D array like a "Frame" o
 but i found it to be too slow to check each frame to print the hole array
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/HiGRAF.PNG) <br><br><br>
 ### Tile Graphics <br>
-IBA' is short for 'I Block Array'<br><br>
+IBA is short for 'I Block Array'<br><br>
 Tile Graphics data is the consequence of the inablilaty to quickly load from the main Screen array, The tile graphics are plastered on top of the screen using the PRINTTAB method and some cheeky cursor movements as It makes each move of the active block more seamless and less laggy and does not wright/save anything till it fails the checkdownmove and gets added to the main Screen array<br>
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/iGRAF.PNG) <br><br><br>
+### Cover Tile Graphics <br>
+EIBA is short for 'Empty I Block Array'<br><br>
+![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/Code_blocks/EiGRAF.PNG) <br><br><br>
 ### The .Length Problem <br><br> ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/ropos.bmp) <br><br>
 the program was writen in bbc basic which is a dumbed down vertion of Basic it's self
 ## How to run Pedair-o for your self 
