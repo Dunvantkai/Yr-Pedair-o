@@ -1,0 +1,14 @@
+keys = ACTIONS$
+100 SETAMSER=1000000 :REM SETMAX CLOCK TICK
+SCREEN$(14"XA",21"YA")
+XA 0 TO 14 : LEFT TO RIGHT
+YA 0 TO 21 : TOP TO BOTTOM
+
+
+
+
+
+/minecraft render
+Black = border 
+Green = Playable SCREEN$(14,21)
+
