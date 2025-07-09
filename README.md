@@ -39,7 +39,8 @@ Step 2: Even though you are running this program in a browser, you will still ne
 Step 3: open [bbc.xania.org](https://bbc.xania.org/) in a new a tab and open the drop down tab called Discs, Select "From examples of local" and upload your .sdd file <br><br>
 Step 4: To check if you have successfully Mounted the Disc you can type <b>*CAT</b> in uppercase to show the list of Programs on said disk. <br><br>
 Step 5: To load a program into ram type <b>LOAD "PEDAIR"</b> and then  to execute type <b>RUN</b>. Making sure all is typed in uppercase. <br><br>
+## Pedair-o Online
+[Click Here to Play](https://shorturl.at/giNVO)
 > [!NOTE]
 > When trying to type the * you may find that it will output a whole different key all-together, I'm not sure why it does this but My guess would be a regional keyboard thing to bypass this i have found that one of thease four characters {~ @ | "} should allow you to type *
 <br>
-[Click Here to Play](https://shorturl.at/giNVO)
