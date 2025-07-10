@@ -1,1 +1,5 @@
 PRINT "Free memory: ", HIMEM - TOP, "bytes"
+PRINT "Used memory: ", TOP - PAGE, " bytes"
+
+PRINT "Free memory: ", HIMEM - TOP, " bytes" : PRINT "Used memory: ", TOP - PAGE, " bytes"
+
