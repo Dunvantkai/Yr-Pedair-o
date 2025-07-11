@@ -1,0 +1,10 @@
+-------------
+Rotate
+Col  = from 2 to 6
+NoCol= from 14 to 6
+-------------
+-------------
+Down
+Col  = from 34 to 27
+NoCol= from 13 to 15
+-------------
