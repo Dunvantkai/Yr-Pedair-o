@@ -1,0 +1,133 @@
+    1 MODE 7
+    2 REM -------DEFINITIONS-------
+    3 BL$=CHR$(255)      :REM BLOCK
+    4 NBL$=" "           :REM NO BLOCK
+    5 B$=CHR$(8)         :REM CURSOR BACK
+    6 F$=CHR$(9)         :REM CURSOR FORWARD
+    7 D$=CHR$(10)        :REM CURSOR DOWN
+    8 U$=CHR$(11)        :REM CURSOR UP
+    9 DIM SET$(3)        :REM SETS CHARACTER BLOCK
+   10 DIM NSET$(3)       :REM SETS THE NEGATIVE OF CHARACTER BLOCK
+   11 DIM SETHB$(3,3,3)  :REM DEFINES SET BLOCKS HIT BOX
+   12 DIM SCREEN$(14,21) :REM SCREEN ARRAY SIZE
+   13 X=0 : Y=0 : R=0 : COL=FALSE : THISREMOVEDLINE%=0 :REM PLAYER X,Y,R / COLLISION / CURSOR LINE REMOVE
+   14 SCORE%=0 : AMSER=0 : LEAVE=FALSE : START=FALSE   :REM SCORE / TIME / LEAVE / START
+   15 SETAMSER=20                                      :REM SET CLOCK TICK RATE
+   16 REM -------COLOUR-DEFINITIONS-------
+   17 L$=CHR$(141) : ST$=CHR$(137) : G$=CHR$(130) :REM L$-WHITE  / ST$-GREY / G$-GREEN
+   18 Y$=CHR$(131) : GL$=CHR$(132) : M$=CHR$(133) :REM Y$-YELLOW / GL$-GOLD / M$-MAGENTA
+   19 C$=CHR$(134) : FL$=CHR$(136) : R$=CHR$(129) :REM C$-CYAN   /FL$-BLINK / R$-RED
+   20 REM -------ARENA-WALLS-N-CLS-NEXT-BLOCK-------
+   21 FOR YA=0 TO 21 : SCREEN$(11,YA)=BL$ : NEXT YA
+   22 FOR XA=0 TO 10 : SCREEN$(XA,18)=BL$ : NEXT XA
+   23 NIT$=NBL$+NBL$+NBL$+NBL$+D$+B$+B$+B$+B$+NBL$+NBL$+NBL$+NBL$+D$+B$+B$+B$+B$+NBL$+NBL$+NBL$+NBL$+D$+B$+B$+B$+B$+NBL$+NBL$+NBL$+NBL$
+   24 REM -------BLOCK-DEFINITIONS-------
+   25 DIM OBA$(3) :REM O BLOCK
+   26 OBA$(0)=BL$+BL$+D$+B$+B$+BL$+BL$
+   27 OBA$(1)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 01
+   28 OBA$(2)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 02
+   29 OBA$(3)=BL$+BL$+D$+B$+B$+BL$+BL$             :REM LOOP 03
+   30 DIM IBA$(3) :REM I BLOCK
+   31 IBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$
+   32 IBA$(1)=BL$+BL$+BL$+BL$
+   33 IBA$(2)=BL$+D$+B$+BL$+D$+B$+BL$+D$+B$+BL$    :REM LOOP 01
+   34 IBA$(3)=BL$+BL$+BL$+BL$                      :REM LOOP 02
+   35 DIM SBA$(3) :REM S BLOCK
+   36 SBA$(0)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$
+   37 SBA$(1)=BL$+D$+B$+BL$+BL$+D$+B$+BL$
+   38 SBA$(2)=F$+BL$+BL$+D$+B$+B$+B$+BL$+BL$+F$    :REM LOOP 01
+   39 SBA$(3)=BL$+D$+B$+BL$+BL$+D$+B$+BL$          :REM LOOP 02
+   40 DIM ZBA$(3) :REM Z BLOCK
+   41 ZBA$(0)=BL$+BL$+D$+B$+B$+F$+BL$+BL$
+   42 ZBA$(1)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+B$+BL$
+   43 ZBA$(2)=BL$+BL$+D$+B$+B$+F$+BL$+BL$          :REM LOOP 01
+   44 ZBA$(3)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+B$+BL$ :REM LOOP 02
+   45 DIM LBA$(3) :REM L BLOCK
+   46 LBA$(0)=BL$+D$+B$+BL$+D$+B$+BL$+BL$
+   47 LBA$(1)=BL$+BL$+BL$+D$+B$+B$+B$+BL$
+   48 LBA$(2)=BL$+BL$+D$+B$+BL$+D$+B$+BL$
+   49 LBA$(3)=F$+F$+BL$+D$+B$+B$+B$+BL$+BL$+BL$
+   50 DIM JBA$(3) :REM J BLOCK
+   51 JBA$(0)=F$+BL$+D$+B$+BL$+D$+B$+B$+BL$+BL$
+   52 JBA$(1)=BL$+D$+B$+BL$+BL$+BL$
+   53 JBA$(2)=BL$+BL$+D$+B$+B$+BL$+D$+B$+BL$
+   54 JBA$(3)=BL$+BL$+BL$+D$+B$+BL$
+   55 DIM TBA$(3) :REM T BLOCK
+   56 TBA$(0)=BL$+BL$+BL$+D$+B$+B$+BL$
+   57 TBA$(1)=F$+BL$+D$+B$+B$+BL$+BL$+D$+B$+BL$
+   58 TBA$(2)=F$+BL$+D$+B$+B$+BL$+BL$+BL$
+   59 TBA$(3)=BL$+D$+B$+BL$+BL$+D$+B$+B$+BL$
+   60 PRINT"GRAPHIC BLOCKS DEFINED"
+   61 REM -------EMPTY-BLOCK-DEFINITIONS-------
+   62 DIM EOBA$(3) :REM EMPTY O BLOCK
+   63 EOBA$(0)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$
+   64 EOBA$(1)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$             :REM LOOP 01
+   65 EOBA$(2)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$             :REM LOOP 02
+   66 EOBA$(3)=NBL$+NBL$+D$+B$+B$+NBL$+NBL$             :REM LOOP 03
+   67 DIM EIBA$(3) :REM EMPTY I BLOCK
+   68 EIBA$(0)=NBL$+D$+B$+NBL$+D$+B$+NBL$+D$+B$+NBL$
+   69 EIBA$(1)=NBL$+NBL$+NBL$+NBL$
+   70 EIBA$(2)=NBL$+D$+B$+NBL$+D$+B$+NBL$+D$+B$+NBL$    :REM LOOP 01
+   71 EIBA$(3)=NBL$+NBL$+NBL$+NBL$                      :REM LOOP 02
+   72 DIM ESBA$(3) :REM EMPTY S BLOCK
+   73 ESBA$(0)=F$+NBL$+NBL$+D$+B$+B$+B$+NBL$+NBL$+F$
+   74 ESBA$(1)=NBL$+D$+B$+NBL$+NBL$+D$+B$+NBL$
+   75 ESBA$(2)=F$+NBL$+NBL$+D$+B$+B$+B$+NBL$+NBL$+F$    :REM LOOP 01
+   76 ESBA$(3)=NBL$+D$+B$+NBL$+NBL$+D$+B$+NBL$          :REM LOOP 02
+   77 DIM EZBA$(3) :REM EMPTY Z BLOCK
+   78 EZBA$(0)=NBL$+NBL$+D$+B$+B$+F$+NBL$+NBL$
+   79 EZBA$(1)=F$+NBL$+D$+B$+B$+NBL$+NBL$+D$+B$+B$+NBL$
+   80 EZBA$(2)=NBL$+NBL$+D$+B$+B$+F$+NBL$+NBL$          :REM LOOP 01
+   81 EZBA$(3)=F$+NBL$+D$+B$+B$+NBL$+NBL$+D$+B$+B$+NBL$ :REM LOOP 02
+   82 DIM ELBA$(3) :REM EMPTY L BLOCK
+   83 ELBA$(0)=NBL$+D$+B$+NBL$+D$+B$+NBL$+NBL$
+   84 ELBA$(1)=NBL$+NBL$+NBL$+D$+B$+B$+B$+NBL$
+   85 ELBA$(2)=NBL$+NBL$+D$+B$+NBL$+D$+B$+NBL$
+   86 ELBA$(3)=F$+F$+NBL$+D$+B$+B$+B$+NBL$+NBL$+NBL$
+   87 DIM EJBA$(3) :REM EMPTY J BLOCK
+   88 EJBA$(0)=F$+NBL$+D$+B$+NBL$+D$+B$+B$+NBL$+NBL$
+   89 EJBA$(1)=NBL$+D$+B$+NBL$+NBL$+NBL$
+   90 EJBA$(2)=NBL$+NBL$+D$+B$+B$+NBL$+D$+B$+NBL$
+   91 EJBA$(3)=NBL$+NBL$+NBL$+D$+B$+NBL$
+   92 DIM ETBA$(3) :REM EMPTY T BLOCK
+   93 ETBA$(0)=NBL$+NBL$+NBL$+D$+B$+B$+NBL$
+   94 ETBA$(1)=F$+NBL$+D$+B$+B$+NBL$+NBL$+D$+B$+NBL$
+   95 ETBA$(2)=F$+NBL$+D$+B$+B$+NBL$+NBL$+NBL$
+   96 ETBA$(3)=NBL$+D$+B$+NBL$+NBL$+D$+B$+B$+NBL$
+   97 PRINT"EMPTY GRAPHIC BLOCKS DEFINED"
+   98 REM -------HITBOX-DEFINITIONS-------
+   99 OBAH$(0,0,0)=BL$ :OBAH$(0,1,0)=BL$ :OBAH$(0,0,1)=BL$ :OBAH$(0,1,1)=BL$
+  100 OBAH$(1,0,0)=BL$ :OBAH$(1,1,0)=BL$ :OBAH$(1,0,1)=BL$ :OBAH$(1,1,1)=BL$  :REM LOOP 01
+  101 OBAH$(2,0,0)=BL$ :OBAH$(2,1,0)=BL$ :OBAH$(2,0,1)=BL$ :OBAH$(2,1,1)=BL$  :REM LOOP 02
+  102 OBAH$(3,0,0)=BL$ :OBAH$(3,1,0)=BL$ :OBAH$(3,0,1)=BL$ :OBAH$(3,1,1)=BL$  :REM LOOP 03
+  103 DIM IBAH$(3,3,3) :REM I BLOCK HIT BOX
+  104 IBAH$(0,0,0)=BL$ :IBAH$(0,0,1)=BL$ :IBAH$(0,0,2)=BL$ :IBAH$(0,0,3)=BL$
+  105 IBAH$(1,0,0)=BL$ :IBAH$(1,1,0)=BL$ :IBAH$(1,2,0)=BL$ :IBAH$(1,3,0)=BL$
+  106 IBAH$(2,0,0)=BL$ :IBAH$(2,0,1)=BL$ :IBAH$(2,0,2)=BL$ :IBAH$(2,0,3)=BL$  :REM LOOP 01
+  107 IBAH$(3,0,0)=BL$ :IBAH$(3,1,0)=BL$ :IBAH$(3,2,0)=BL$ :IBAH$(3,3,0)=BL$  :REM LOOP 02
+  108 DIM SBAH$(3,3,3) :REM S BLOCK HIT BOX
+  109 SBAH$(0,1,0)=BL$ :SBAH$(0,2,0)=BL$ :SBAH$(0,0,1)=BL$ :SBAH$(0,1,1)=BL$
+  110 SBAH$(1,0,0)=BL$ :SBAH$(1,0,1)=BL$ :SBAH$(1,1,1)=BL$ :SBAH$(1,1,2)=BL$
+  111 SBAH$(2,1,0)=BL$ :SBAH$(2,2,0)=BL$ :SBAH$(2,0,1)=BL$ :SBAH$(2,1,1)=BL$  :REM LOOP 01
+  112 SBAH$(3,0,0)=BL$ :SBAH$(3,0,1)=BL$ :SBAH$(3,1,1)=BL$ :SBAH$(3,1,2)=BL$  :REM LOOP 02
+  113 DIM ZBAH$(3,3,3) :REM Z BLOCK HIT BOX
+  114 ZBAH$(0,0,0)=BL$ :ZBAH$(0,1,0)=BL$ :ZBAH$(0,1,1)=BL$ :ZBAH$(0,2,1)=BL$
+  115 ZBAH$(1,1,0)=BL$ :ZBAH$(1,0,1)=BL$ :ZBAH$(1,1,1)=BL$ :ZBAH$(1,0,2)=BL$
+  116 ZBAH$(2,0,0)=BL$ :ZBAH$(2,1,0)=BL$ :ZBAH$(2,1,1)=BL$ :ZBAH$(2,2,1)=BL$  :REM LOOP 01
+  117 ZBAH$(3,1,0)=BL$ :ZBAH$(3,0,1)=BL$ :ZBAH$(3,1,1)=BL$ :ZBAH$(3,0,2)=BL$  :REM LOOP 02
+  118 DIM LBAH$(3,3,3) :REM L BLOCK HIT BOX
+  119 LBAH$(0,0,0)=BL$ :LBAH$(0,0,1)=BL$ :LBAH$(0,0,2)=BL$ :LBAH$(0,1,2)=BL$
+  120 LBAH$(1,0,0)=BL$ :LBAH$(1,1,0)=BL$ :LBAH$(1,2,0)=BL$ :LBAH$(1,0,1)=BL$
+  121 LBAH$(2,0,0)=BL$ :LBAH$(2,1,0)=BL$ :LBAH$(2,1,1)=BL$ :LBAH$(2,1,2)=BL$
+  122 LBAH$(3,2,0)=BL$ :LBAH$(3,0,1)=BL$ :LBAH$(3,1,1)=BL$ :LBAH$(3,2,1)=BL$
+  123 DIM JBAH$(3,3,3) :REM J BLOCK HIT BOX
+  124 JBAH$(0,1,0)=BL$ :JBAH$(0,1,1)=BL$ :JBAH$(0,0,2)=BL$ :JBAH$(0,1,2)=BL$
+  125 JBAH$(1,0,0)=BL$ :JBAH$(1,0,1)=BL$ :JBAH$(1,1,1)=BL$ :JBAH$(1,2,1)=BL$
+  126 JBAH$(2,0,0)=BL$ :JBAH$(2,1,0)=BL$ :JBAH$(2,0,1)=BL$ :JBAH$(2,0,2)=BL$
+  127 JBAH$(3,0,0)=BL$ :JBAH$(3,1,0)=BL$ :JBAH$(3,2,0)=BL$ :JBAH$(3,2,1)=BL$
+  128 DIM TBAH$(3,3,3) :REM T BLOCK HIT BOX
+  129 TBAH$(0,0,0)=BL$ :TBAH$(0,1,0)=BL$ :TBAH$(0,2,0)=BL$ :TBAH$(0,1,1)=BL$
+  130 TBAH$(1,1,0)=BL$ :TBAH$(1,0,1)=BL$ :TBAH$(1,1,1)=BL$ :TBAH$(1,1,2)=BL$
+  131 TBAH$(2,1,0)=BL$ :TBAH$(2,0,1)=BL$ :TBAH$(2,1,1)=BL$ :TBAH$(2,2,1)=BL$
+  132 TBAH$(3,0,0)=BL$ :TBAH$(3,0,1)=BL$ :TBAH$(3,1,1)=BL$ :TBAH$(3,0,2)=BL$
+  133 PRINT"HIT BOX BLOCKS DEFINED"
