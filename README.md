@@ -4,7 +4,7 @@ Pedair-o is my version of tetris for the bbc model b which is a computer that wa
 ## Photos
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/gamev2.bmp)
 ![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/blocksV2.bmp)
-![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/gameV2RL.jpg)
+![alt text](https://raw.githubusercontent.com/Dunvantkai/Yr-Pedair-o/main/Programs_Photos/gameV2RLRS.jpg)
 ## Behind the name
 I chose the name Pedair-o (Welsh for (The four of))as a nod to the name "tetris" as it is derived from the Greek prefix "tetra" meaning to having four parts (as every block in teras is make up of four blocks)
 ## How i made the Pedair-o and the problems i faced
